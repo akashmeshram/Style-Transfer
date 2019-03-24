@@ -20,6 +20,7 @@ function loadStyle() {
   for(let i = 1 ; i <= 9; i++){
     $("#" + i).click(function() {
       let path = './models/' + i;
+      $('#statusMsg').text('Loading...!');
       style1 = ml5.styleTransfer(path, modelLoaded);
     });
   }
