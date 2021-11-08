@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Style Transfer</title>
+	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
+</head>
+<body>
+	<header class="parent col">
+		<h1>STYLE TRANSFER</h1>
+	</header>
+	<div class="parent main">
+		
+			<div class="sub">
+				<p class="title">PHOTO (click to upload)</p>
+				<input type="file" name="uploadfile" id="img" style="display:none;"/>
+				<label for="img">
+					<div class="parent photoBox">
+						<img  id="inputImg" src="./img/temp.jpg" alt="your image" />
+					</div>
+				</label>						
+			</div>
+
+			<div class="sub">
+				<p class="title">STYLE</p>
+				<div id="scrollBox">
+				</div>
+				<label for="stylized-strength">Stylization Strength</label>
+				<input type="range" min="5" max="100" value="100" id="stylized-strength">
+			</div>
+				
+			<div class="sub">
+				<p class="title">RESULT</p>
+				<div class="parent photoBox">
+					<canvas id="result" class="centered"></canvas>
+				</div>
+			</div>
+		
+	</div>
+
+	<div class="parent col">
+		<p id="statusMsg">Click a style to Load Model</p>
+		<button id="transferBtn">Transfer!</button>
+	</div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
+<!-- <script src="dist/main.js"></script> -->
+</html>
