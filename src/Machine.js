@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { contentImageId, canvasId } from './config';
+import { contentImageId, styleImageId, canvasId } from './config';
 
 class Machine extends EventEmitter {
   constructor() {
@@ -7,7 +7,7 @@ class Machine extends EventEmitter {
 
     this.predictionModel = null;
     this.transformModel = null;
-    this.style = null; 
+    this.style = document.getElementById(styleImageId);
     this.content = document.getElementById(contentImageId);
     this.canvas = document.getElementById(canvasId);
     this.contentBlending = 1.0;

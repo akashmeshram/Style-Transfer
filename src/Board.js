@@ -1,22 +1,19 @@
 import {EventEmitter} from 'events';
-import { contentImageId, styleImages, styleStrengthId, uploadImageId, scrollBoxId } from './config';
+import { contentImageId, styleImages, styleStrengthId, styleImageId, scrollBoxId } from './config';
 
 const styleImage = (name) => {
   const img = document.createElement('img');
   img.src = `./img/${name}.jpg`;
   img.alt = `${name} style image`;
   img.id = `style-${name}`;
-  
-  const cell = document.createElement('button');
-  cell.appendChild(img);
-  return cell;
+  return img;
 } 
 
 class Board extends EventEmitter {
   constructor() {
     super();
     this.container = document.getElementById(scrollBoxId);
-    this.uploadImage = document.getElementById(uploadImageId);
+    this.style = document.getElementById(styleImageId);
     this.strengthBar = document.getElementById(styleStrengthId);
     this.content = document.getElementById(contentImageId);
 
@@ -33,13 +30,19 @@ class Board extends EventEmitter {
   loadStyles() {
     styleImages.map(name => {
       const image = styleImage(name);
-      image.addEventListener('click', () => { this.emit('style', `style-${name}`);});
-      this.container.appendChild(image);
+      const cell = document.createElement('button');
+      cell.appendChild(image);
+      cell.addEventListener('click', () => { this.style.src =  image.src;});
+      this.container.appendChild(cell);
     })    
   }
 
   set contentImage(src) {
     this.content.setAttribute('src', src);
+  }
+
+  set styleImage(src) {
+    this.style.setAttribute('src', src);
   }
 
 }
