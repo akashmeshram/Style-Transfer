@@ -5,46 +5,58 @@
 	<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/reset.css">
+	<link rel="stylesheet" type="text/css" href="./css/typography.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
 <body>
-	<header class="parent col">
+	<header>
 		<h1>STYLE TRANSFER</h1>
 	</header>
-	<div class="parent main">
-		
-			<div class="sub">
-				<p class="title">PHOTO (click to upload)</p>
-				<input type="file" name="uploadfile" id="img" style="display:none;"/>
-				<label for="img">
-					<div class="parent photoBox">
-						<img  id="inputImg" src="./img/temp.jpg" alt="your image" />
-					</div>
-				</label>						
-			</div>
+	<main>
+		<article>
+			<section class="upload">
+				<div>
+					<input type="file" name="contentUploadfile" id="img" style="display:none;"/>
+					<label for="img">
+						<img  id="inputImg" src="./img/contentUpload.jpg" alt="Content to transfer on" />
+					</label>
+					<p>Content image</p>
+				</div>
+				<div>
+					<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
+					<label for="styleUpload">
+						<img  id="styleImg" src="./img/styleUpload.jpg" alt="Style for Extraction" />
+					</label>
+					<p>Style image</p>
+				</div>
+			</section>
 
-			<div class="sub">
-				<p class="title">STYLE</p>
+			<section>
+				<p>You can select style from here by clicking image</p>
 				<div id="scrollBox">
 				</div>
-				<label for="stylized-strength">Stylization Strength</label>
-				<input type="range" min="5" max="100" value="100" id="stylized-strength">
-			</div>
-				
-			<div class="sub">
-				<p class="title">RESULT</p>
-				<div class="parent photoBox">
-					<canvas id="result" class="centered"></canvas>
-				</div>
-			</div>
-		
-	</div>
+			</section>
+		</article>
 
-	<div class="parent col">
-		<p id="statusMsg">Click a style to Load Model</p>
-		<button id="transferBtn">Transfer!</button>
-	</div>
+		<aside>
+			<h3>RESULT</h3>
+			<section>
+				<canvas id="result" width="250px" height="250px" style="background: url('./img/result.jpg')"></canvas>
+			</section>
+			<section>
+				<div>
+					<label for="stylized-strength">
+						<p>Content Blend Strength</p>
+					</label>
+					<input type="range" min="5" max="100" value="100" id="stylized-strength">
+				</div>
+				<div>
+					<button id="transferBtn">Transfer!</button>
+				</div>
+			</section>
+		</aside>
+	</main>
 
 </body>
 
