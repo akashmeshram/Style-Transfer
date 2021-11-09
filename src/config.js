@@ -4,8 +4,19 @@ const contentImageId = 'contentImg';
 const styleImageId = 'styleImg';
 const uploadContentId = 'contentUpload' ;
 const uploadStyleId = 'styleUpload' ;
+const statusId = 'status';
 const canvasId = 'result';
 const transfer = 'transferBtn';
 const scrollBoxId = 'scrollBox';
 
-export { styleImages, styleStrengthId, contentImageId, canvasId, transfer, uploadContentId, uploadStyleId, styleImageId, scrollBoxId };
+export { 
+  styleImages, 
+  styleStrengthId, 
+  contentImageId, 
+  canvasId, transfer, 
+  uploadContentId, 
+  uploadStyleId, 
+  styleImageId, 
+  scrollBoxId, 
+  statusId 
+};

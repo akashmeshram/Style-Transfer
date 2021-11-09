@@ -1,5 +1,12 @@
 import {EventEmitter} from 'events';
-import { contentImageId, styleImages, styleStrengthId, styleImageId, scrollBoxId } from './config';
+import { 
+  contentImageId, 
+  styleImages, 
+  styleStrengthId, 
+  styleImageId, 
+  scrollBoxId,
+  statusId 
+} from './config';
 
 const styleImage = (name) => {
   const img = document.createElement('img');
@@ -16,7 +23,7 @@ class Board extends EventEmitter {
     this.style = document.getElementById(styleImageId);
     this.strengthBar = document.getElementById(styleStrengthId);
     this.content = document.getElementById(contentImageId);
-
+    this.status = document.getElementById(statusId);
     this.loadStyles();
     this.loadStrengthBar();
   }
@@ -43,6 +50,10 @@ class Board extends EventEmitter {
 
   set styleImage(src) {
     this.style.setAttribute('src', src);
+  }
+
+  set statusText(value) {
+    this.status.innerHTML = value;
   }
 
 }

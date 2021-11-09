@@ -38,3 +38,14 @@ board.on('strength', (val) => {
   machine.styleStrength = val;
 });
 
+machine.on('style-loading', () => {
+  board.statusText = 'Style Applying';
+})
+
+
+machine.on('style-complete', () => {
+  board.statusText = 'Style Complete';
+  setTimeout(() => {
+    board.statusText = 'try with different content and style images';
+  }, 5000);
+})
