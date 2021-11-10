@@ -14,48 +14,50 @@
 		<h1>STYLE TRANSFER</h1>
 	</header>
 	<main>
-		<article>
-			<section class="upload">
-				<div>
-					<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
-					<label for="contentUpload">
-						<img  id="contentImg" src="./img/contentUpload.jpg" alt="Content to transfer on" />
-					</label>
-					<p>Content image</p>
-				</div>
-				<div>
-					<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
-					<label for="styleUpload">
-						<img  id="styleImg" src="./img/styleUpload.jpg" alt="Style for Extraction" />
-					</label>
-					<p>Style image</p>
-				</div>
-			</section>
 
+		<article>
+			<p>Content image</p>
+			<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
+			<label for="contentUpload">
+				<img  id="contentImg" src="./img/contentUpload.jpg" alt="Content to transfer on" />
+			</label>
 			<section>
-				<p>You can select style from here by clicking image</p>
-				<div id="scrollBox">
-				</div>
+				<p>or select from here </p>
+				<aside id="contentGallery">
+				</aside>
+			</section>
+			
+		</article>
+
+		<article>
+			<p>Upload style image</p>
+			<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
+			<label for="styleUpload">
+				<img  id="styleImg" src="./img/styleUpload.jpg" alt="Style for Extraction" />
+			</label>
+			
+			<section>
+				<p>or select from here </p>
+				<aside id="gallery">
+				</aside>
 			</section>
 		</article>
 
-		<aside>
-			<h5 id="status">select content and style images to do style transfer</h5>
+		<article>
+			<p >Result image</p>
+			<canvas id="result"></canvas>
 			<section>
-				<canvas id="result" width="250px" height="250px" style="background: url('./img/result.jpg')"></canvas>
-			</section>
-			<section>
+				<p id="status">Press transfer to stylize</p>
 				<div>
-					<label for="stylized-strength">
-						<p>Content Blend Strength</p>
-					</label>
-					<input type="range" min="5" max="100" value="100" id="stylized-strength">
+					<p>Content Blend Strength</p>
+					<input type="range" min="5" max="100" value="50" id="stylized-strength">
 				</div>
 				<div>
 					<button id="transferBtn">Transfer!</button>
 				</div>
 			</section>
-		</aside>
+		</article>
+		
 	</main>
 
 </body>

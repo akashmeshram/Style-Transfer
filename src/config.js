@@ -7,7 +7,7 @@ const uploadStyleId = 'styleUpload' ;
 const statusId = 'status';
 const canvasId = 'result';
 const transfer = 'transferBtn';
-const scrollBoxId = 'scrollBox';
+const scrollBoxId = 'gallery';
 
 export { 
   styleImages, 

@@ -1,3 +1,12 @@
+:root {
+	--white: #ffffffff;
+	--mint: #3ab795ff;
+	--tart-orange: #f44336ff;
+	--cultured: #f1f1f1ff;
+	--eerie-black: #191716ff;
+	--white-space: 1.25rem;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -10,93 +19,65 @@ body {
 
 header {
 	text-align: center;
-	color: #673ab7;
+	margin-bottom: calc(var(--white-space) * 2);
 }
 
 main {
 	display: flex;
-	margin: 0 2em;
+	margin: 0 calc(var(--white-space) * 2);
 }
 
 main > article {
-	flex: 2 1 0;
-}
-
-main > aside {
 	flex: 1 1 0;
 	text-align: center;
 }
 
-.upload {
-	display: flex;
-	justify-content: space-around;
-	margin-bottom: 2.5rem;
+img, canvas {
+	width: 25rem;
+	height: 25rem;
 }
 
-label {
-	cursor: pointer;
-	text-align: center;
-}
-
-img {
-	width: 250px;
-	height: 250px;
-}
-
-p {
-	text-align: center;
-	margin-top: 1.25rem;
-}
-
-#inputImg:hover, #styleImg:hover {
+img:hover, canvas:hover {
 	opacity: 0.5;
+	cursor: pointer;
+}
+
+canvas {
+	background-image: url('../img/result.jpg');
+	background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
 }
 
 aside {
-	margin: 2.5rem 0;
+	height: 20rem;
+	overflow-y:auto;
 }
 
-aside h5 {
-	margin: 2.5rem 0;
+aside img {
+	height: auto;
+	width: 10rem;
 }
 
-aside div {
-	margin: 5rem 0;
+article:last-child > section > div {
+	margin-top: calc(var(--white-space) * 3);
 }
 
 #transferBtn {
-	color: #f44336;
-	border: 1px solid #f44336;
-	padding: 7px 16px;
+	margin-top: calc(var(--white-space) * 3) 0;
+	color : var(--eerie-black);
+	border: 1px solid var(--eerie-black); 
+	padding: calc(var(--white-space)) calc(var(--white-space) * 2);
 	text-align: center;
 	border-radius: 1px;
 	cursor:pointer; 
 }
 
-#transferBtn:hover {
-	background-color: #f44336; 
+#transferBtn:hover, #transferBtn:active {
+	background-color: var(--eerie-black);
 	color: white;
 }
 
-#scrollBox {
-	display: flex;
-	flex-wrap: wrap;
-	background-color: #fafafa;
-	border-radius: 5px;
-	height: 400px;
-	justify-content: center;
-	overflow-y:auto;
-}
-
-#scrollBox img {
-	width: 150px;
-	height: 150px;
-}
-
-#scrollBox button:hover {
-	opacity: 0.5;
-}
-
-#stylized-strength {
-	width: 60%;
+input[type=range] {
+	width: 50%;
 }

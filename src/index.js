@@ -45,7 +45,4 @@ machine.on('style-loading', () => {
 
 machine.on('style-complete', () => {
   board.statusText = 'Style Complete';
-  setTimeout(() => {
-    board.statusText = 'try with different content and style images';
-  }, 5000);
 })
