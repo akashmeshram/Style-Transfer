@@ -32,9 +32,13 @@ main > article {
 	text-align: center;
 }
 
+main > article > section {
+	margin-top: calc(var(--white-space) * 2);
+}
+
 img, canvas {
-	width: 25rem;
-	height: 25rem;
+	width: 20rem;
+	height: 20rem;
 }
 
 img:hover, canvas:hover {
@@ -64,7 +68,6 @@ article:last-child > section > div {
 }
 
 #transferBtn {
-	margin-top: calc(var(--white-space) * 3) 0;
 	color : var(--eerie-black);
 	border: 1px solid var(--eerie-black); 
 	padding: calc(var(--white-space)) calc(var(--white-space) * 2);

@@ -2,13 +2,13 @@ import Machine from './Machine';
 import Board from './Board';
 import { transfer, uploadContentId, uploadStyleId } from './config';
 
-const board = new Board();
 const tranferButton = document.getElementById(transfer);
 const uploadContent = document.getElementById(uploadContentId);
 const uploadStyle = document.getElementById(uploadStyleId);
+
+const board = new Board();
 const machine  = new Machine();
 machine.loadModels();
-
 
 uploadContent.addEventListener('input', function() {
   if (this.files && this.files[0]) {
@@ -38,11 +38,12 @@ board.on('strength', (val) => {
   machine.styleStrength = val;
 });
 
+
 machine.on('style-loading', () => {
-  board.statusText = 'Style Applying';
+  board.statusText = 'Style Applying ....';
 })
 
 
 machine.on('style-complete', () => {
-  board.statusText = 'Style Complete';
+  board.statusText = 'Style Complete !!!';
 })

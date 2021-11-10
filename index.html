@@ -13,10 +13,10 @@
 	<header>
 		<h1>STYLE TRANSFER</h1>
 	</header>
-	<main>
 
+	<main>
 		<article>
-			<p>Content image</p>
+			<p>Upload content image</p>
 			<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
 			<label for="contentUpload">
 				<img  id="contentImg" src="./img/contentUpload.jpg" alt="Content to transfer on" />
@@ -26,7 +26,6 @@
 				<aside id="contentGallery">
 				</aside>
 			</section>
-			
 		</article>
 
 		<article>
@@ -35,10 +34,9 @@
 			<label for="styleUpload">
 				<img  id="styleImg" src="./img/styleUpload.jpg" alt="Style for Extraction" />
 			</label>
-			
 			<section>
 				<p>or select from here </p>
-				<aside id="gallery">
+				<aside id="styleGallery">
 				</aside>
 			</section>
 		</article>
@@ -57,11 +55,9 @@
 				</div>
 			</section>
 		</article>
-		
 	</main>
 
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"> </script>
-<!-- <script src="dist/main.js"></script> -->
 </html>

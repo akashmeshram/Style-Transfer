@@ -4,7 +4,8 @@ import {
   styleImages, 
   styleStrengthId, 
   styleImageId, 
-  scrollBoxId,
+  styleGalleryId,
+  contentGalleryId,
   statusId 
 } from './config';
 
@@ -19,12 +20,15 @@ const styleImage = (name) => {
 class Board extends EventEmitter {
   constructor() {
     super();
-    this.container = document.getElementById(scrollBoxId);
+    this.styleGallery = document.getElementById(styleGalleryId);
+    this.contentGallery = document.getElementById(contentGalleryId);
+
     this.style = document.getElementById(styleImageId);
     this.strengthBar = document.getElementById(styleStrengthId);
     this.content = document.getElementById(contentImageId);
     this.status = document.getElementById(statusId);
     this.loadStyles();
+    this.loadContent();
     this.loadStrengthBar();
   }
 
@@ -40,7 +44,17 @@ class Board extends EventEmitter {
       const cell = document.createElement('button');
       cell.appendChild(image);
       cell.addEventListener('click', () => { this.style.src =  image.src;});
-      this.container.appendChild(cell);
+      this.styleGallery.appendChild(cell);
+    })    
+  }
+
+  loadContent() {
+    styleImages.map(name => {
+      const image = styleImage(name);
+      const cell = document.createElement('button');
+      cell.appendChild(image);
+      cell.addEventListener('click', () => { this.content.src =  image.src;});
+      this.contentGallery.appendChild(cell);
     })    
   }
 
