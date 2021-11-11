@@ -23,12 +23,14 @@ class Machine extends EventEmitter {
   }
 
   async applyStyle() {
+    tf.engine().startScope();
     await tf.nextFrame();
     const styleBottleneck = await this.runStylePredict();
     const stylizedImage = await this.runStyleTransform(styleBottleneck);
     this.displayOutput(stylizedImage)
     styleBottleneck.dispose(); 
     stylizedImage.dispose();
+    tf.engine().endScope();
   }
 
   async runStylePredict() {
@@ -66,8 +68,8 @@ class Machine extends EventEmitter {
   }
 
   async displayOutput(image) {
-    this.emit('style-complete');
     await tf.browser.toPixels(image, this.canvas);
+    this.emit('style-complete');
   }
 
   set styleStrength(val) {

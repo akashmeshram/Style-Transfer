@@ -27,6 +27,14 @@ class Board extends EventEmitter {
     this.strengthBar = document.getElementById(styleStrengthId);
     this.content = document.getElementById(contentImageId);
     this.status = document.getElementById(statusId);
+
+    this.statusMessages = [
+      {color: 'black', message: 'Click transfer to apply strength'},
+      {color: '#f44336ff', message: 'Style Processing ....'},
+      {color: 'red', message: 'Style Applying ....'},
+      {color: 'green', message: 'Stylize Complete !!!'}
+    ];
+
     this.loadStyles();
     this.loadContent();
     this.loadStrengthBar();
@@ -66,8 +74,9 @@ class Board extends EventEmitter {
     this.style.setAttribute('src', src);
   }
 
-  set statusText(value) {
-    this.status.innerHTML = value;
+  set statusCode(value) {
+    this.status.innerHTML = this.statusMessages[value]['message'];
+    this.status.style.color = this.statusMessages[value]['color'];
   }
 
 }

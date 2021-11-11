@@ -36,14 +36,15 @@ tranferButton.addEventListener('click', () => {
 
 board.on('strength', (val) => {
   machine.styleStrength = val;
+  board.statusCode = 0;
 });
 
 
 machine.on('style-loading', () => {
-  board.statusText = 'Style Applying ....';
+  board.statusCode = 1;
 })
 
 
 machine.on('style-complete', () => {
-  board.statusText = 'Style Complete !!!';
+  board.statusCode = 3;
 })
