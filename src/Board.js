@@ -1,7 +1,8 @@
 import {EventEmitter} from 'events';
 import { 
+  stylesList,
+  contentsList,
   contentImageId, 
-  styleImages, 
   styleStrengthId, 
   styleImageId, 
   styleGalleryId,
@@ -9,9 +10,9 @@ import {
   statusId 
 } from './config';
 
-const styleImage = (name) => {
+const styleImage = (name, folder) => {
   const img = document.createElement('img');
-  img.src = `./img/${name}.jpg`;
+  img.src = `./img/${folder}/${name}.webp`;
   img.alt = `${name} style image`;
   img.id = `style-${name}`;
   return img;
@@ -47,8 +48,8 @@ class Board extends EventEmitter {
   }
 
   loadStyles() {
-    styleImages.map(name => {
-      const image = styleImage(name);
+    stylesList.sort(() => 0.5 - Math.random()).map(name => {
+      const image = styleImage(name, 'styles');
       const cell = document.createElement('button');
       cell.appendChild(image);
       cell.addEventListener('click', () => { this.style.src =  image.src;});
@@ -57,8 +58,8 @@ class Board extends EventEmitter {
   }
 
   loadContent() {
-    styleImages.map(name => {
-      const image = styleImage(name);
+    contentsList.sort(() => 0.5 - Math.random()).map(name => {
+      const image = styleImage(name, 'contents');
       const cell = document.createElement('button');
       cell.appendChild(image);
       cell.addEventListener('click', () => { this.content.src =  image.src;});
@@ -76,7 +77,6 @@ class Board extends EventEmitter {
 
   set statusCode(value) {
     this.status.innerHTML = this.statusMessages[value]['message'];
-    this.status.style.color = this.statusMessages[value]['color'];
   }
 
 }

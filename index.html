@@ -11,16 +11,18 @@
 </head>
 <body>
 	<header>
-		<h1>STYLE TRANSFER</h1>
+		<h1>Style Transfer</h1>
 	</header>
 
 	<main>
 		<article>
-			<p>Upload content image</p>
-			<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
-			<label for="contentUpload">
-				<img  id="contentImg" src="./img/contentUpload.jpg" alt="Content to transfer on" />
-			</label>
+			<section>
+				<p>Upload content image</p>
+				<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
+				<label for="contentUpload">
+					<img  id="contentImg" src="./img/temp/content.webp" alt="Content to transfer on" />
+				</label>
+			</section>
 			<section>
 				<p>or select from here </p>
 				<aside id="contentGallery">
@@ -29,11 +31,13 @@
 		</article>
 
 		<article>
-			<p>Upload style image</p>
-			<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
-			<label for="styleUpload">
-				<img  id="styleImg" src="./img/styleUpload.jpg" alt="Style for Extraction" />
-			</label>
+			<section>
+				<p>Upload style image</p>
+				<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
+				<label for="styleUpload">
+					<img  id="styleImg" src="./img/temp/style.webp" alt="Style for Extraction" />
+				</label>
+			</section>
 			<section>
 				<p>or select from here </p>
 				<aside id="styleGallery">
@@ -42,13 +46,15 @@
 		</article>
 
 		<article>
-			<p >Result image</p>
-			<canvas id="result"></canvas>
 			<section>
-				<p id="status">Press transfer to stylize</p>
+				<p>Result image</p>
+				<canvas id="result"></canvas>
+			</section>
+			<section>
+				<p id="status" class="alert-info">Press transfer to stylize</p>
 				<div>
 					<p>Content Blend Strength</p>
-					<input type="range" min="5" max="100" value="50" id="stylized-strength">
+					<input type="range" min="5" max="100" value="80" id="stylized-strength">
 				</div>
 				<div>
 					<button id="transferBtn">Transfer!</button>

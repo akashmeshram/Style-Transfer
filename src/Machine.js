@@ -10,7 +10,7 @@ class Machine extends EventEmitter {
     this.style = document.getElementById(styleImageId);
     this.content = document.getElementById(contentImageId);
     this.canvas = document.getElementById(canvasId);
-    this.contentBlending = 0.5;
+    this.contentBlending = 0.75;
 
     this.loadModels();
   }
