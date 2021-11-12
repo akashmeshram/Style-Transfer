@@ -1,0 +1,1 @@
+for /r %%i in (*.jpg) do ( magick convert %%~nni.jpg %%~nni.webp  )
