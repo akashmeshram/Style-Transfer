@@ -1,10 +1,11 @@
 import Machine from './Machine';
 import Board from './Board';
-import { transfer, uploadContentId, uploadStyleId } from './config';
+import { transfer, uploadContentId, uploadStyleId, canvasId } from './config';
 
 const tranferButton = document.getElementById(transfer);
 const uploadContent = document.getElementById(uploadContentId);
 const uploadStyle = document.getElementById(uploadStyleId);
+const canvas = document.getElementById(canvasId);
 
 const board = new Board();
 const machine  = new Machine();
@@ -32,6 +33,14 @@ uploadStyle.addEventListener('input', function() {
 
 tranferButton.addEventListener('click', () => {
   machine.applyStyle();
+})  
+
+canvas.addEventListener('click', () => {
+  const image = canvas.toDataURL("image/png", 1.0).replace("image/png", "image/octet-stream");
+  const link = document.createElement('a');
+  link.download = "styled.png";
+  link.href = image;
+  link.click();
 })  
 
 board.on('strength', (val) => {

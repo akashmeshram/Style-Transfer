@@ -1,9 +1,7 @@
 :root {
 	--white: #ffffffff;
-	--mint: #3ab795ff;
 	--grey: rgb(132, 132, 132);
-	--cultured: #f1f1f1ff;
-	--eerie-black: rgb(42, 46, 47);
+	--eerie-black: #191716;
 	--background: white;
 	--text: var(--eerie-black);
 	--white-space: 1.25rem;
@@ -15,10 +13,10 @@
 
 html,
 body {
-    max-width: 100vw;
-    min-height: 100vh;
-		background-color: white;
-		color: var(--text);
+	max-width: 100vw;
+	min-height: 100vh;
+	background-color: white;
+	color: var(--text);
 }
 
 header {
@@ -34,12 +32,23 @@ main {
 main > article {
 	flex: 1 1 0;
 	text-align: center;
+	justify-content: center;
+}
+
+main > article > section:first-child  {
+	width: fit-content;
+	margin: 0 auto;
+	padding: 4px;
+}
+
+main > article > section:first-child:hover  {
+	border: 1px solid var(--text); 
+	padding: 3px;
 }
 
 main > article > section:last-child {
 	margin-top: calc(var(--white-space) * 2);
 }
-
 
 @media screen and (max-width: 767px) {
 	main {
@@ -48,17 +57,13 @@ main > article > section:last-child {
 }
 
 img, canvas {
-	border: 2px solid var(--text); 
 	width: 20rem;
 	height: 20rem;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
-img:hover {
-	opacity: 0.6;
+label:hover {
 	cursor: pointer;
-	/* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }
 
 canvas {
@@ -73,7 +78,7 @@ aside {
 	padding: 1rem;
 	margin: 0 0.5rem;
 	overflow-y:auto;
-	border: 2px solid var(--text);
+	border: 1px solid var(--text);
 }
 
 aside::-webkit-scrollbar {
@@ -100,13 +105,17 @@ aside img {
 	border: none;
 }
 
+aside img:hover {
+	opacity: 0.6;
+}
+
 article:last-child > section > div {
 	margin-top: calc(var(--white-space) * 3);
 }
 
 #transferBtn {
-	color : var(--text);
-	border: 2px solid var(--text); 
+	background-color: var(--text);
+	color: var(--white);
 	padding: calc(var(--white-space) * 0.5) calc(var(--white-space) * 1.5);
 	text-align: center;
 	border-radius: 1px;
@@ -114,8 +123,9 @@ article:last-child > section > div {
 }
 
 #transferBtn:hover, #transferBtn:active {
-	background-color: var(--text);
-	color: var(--white);
+	color : var(--text);
+	border: 1px solid var(--text); 
+	background-color: var(--white);
 }
 
 input[type=range] {

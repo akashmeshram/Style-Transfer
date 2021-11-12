@@ -17,9 +17,9 @@
 	<main>
 		<article>
 			<section>
-				<p>Upload content image</p>
 				<input type="file" name="contentUploadfile" id="contentUpload" style="display:none;"/>
 				<label for="contentUpload">
+					<p>Upload content image</p>
 					<img  id="contentImg" src="./img/temp/content.webp" alt="Content to transfer on" />
 				</label>
 			</section>
@@ -32,9 +32,9 @@
 
 		<article>
 			<section>
-				<p>Upload style image</p>
 				<input type="file" name="styleUploadfile" id="styleUpload" style="display:none;"/>
 				<label for="styleUpload">
+					<p>Upload style image</p>
 					<img  id="styleImg" src="./img/temp/style.webp" alt="Style for Extraction" />
 				</label>
 			</section>
@@ -47,8 +47,10 @@
 
 		<article>
 			<section>
-				<p>Result image</p>
-				<canvas id="result"></canvas>
+				<label>
+					<p>Download Result image</p>
+					<canvas id="result"></canvas>
+				</label>
 			</section>
 			<section>
 				<p id="status" class="alert-info">Press transfer to stylize</p>
