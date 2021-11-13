@@ -67,7 +67,7 @@ label:hover {
 }
 
 canvas {
-	background-image: url('../img/temp/result.webp');
+	background-image: url('../img/temp/result.png');
 	background-position: center;
   background-repeat: no-repeat;
   background-size: cover; 
